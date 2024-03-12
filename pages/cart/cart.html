@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Agna vinod" />
+  <meta name="description" content="Beauty E-commerce Store" />
+  <meta name="keywords" content="beauty store,e-commerce,react.js" />
+  <link rel="stylesheet" href="https://felizui.netlify.app/styles/index.css" />
+  <link rel="stylesheet" href="/pages/home/homepage.css">
+  <link rel="stylesheet" href="/pages/cart/cart.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" href="/assets/Stunners.png" />
+  <title>Cart Page</title>
+</head>
+
+<body>
+  <nav class="navbar semibold-font-weight">
+    <div class="openMenu"><i class="fa fa-bars"></i></div>
+    <a class="nav-icon-link nav-link link-no-style hide-icon" href="/index.html">
+      <img class="logoimage" src="/assets/Stunners.png" alt="" />
+      <span class="small-fontsize">Sariga</span>
+    </a>
+    <a class="nav-link link-no-style nav-home" href="/index.html">Home</a>
+    <a class="nav-link link-no-style nav-products" href="/pages/products/products.html">Products</a>
+
+    <div class="mainMenu">
+      <div class="searchbar">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" class="search-input" placeholder="Search on Sariga" />
+      </div>
+      <a href="/pages/Authentication/login/login.html" class="link-no-style nav-link nav-icon-link">
+        <i class="fas fa-user hide-icon"></i>
+        <span class="small-fontsize">Login</span>
+      
+        
+      
+      <a href="/pages/cart/cart.html" class="link-no-style nav-link nav-icon-link">
+        <i class="fas fa-cart-shopping hide-icon"><span class="number-badge">0</span></i></i>
+        <span class="small-fontsize">Cart</span>
+      </a>
+
+      <div class="closeMenu">
+        <i class="fa fa-times"></i>
+      </div>
+    </div>
+  </nav>
+
+  <div class="cart-page">
+    <div class="cart-page-title semibold-font-weight">My Cart</div>
+    <div class="cart-page-item">
+      <div>
+         <!-- Cart items will be dynamically added here -->
+            </div>
+          </div>
+         
+              <div class="flex">
+                <button class="btn save-btn">save</button>
+                <button class="btn close-btn cancel-btn">cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cart-product-card">
+          <div class="cart-product-img">
+            <img src="/assets/product1.jpg" alt="product-img" />
+          </div>
+          <div class="cart-product-details">
+            <div class="cart-product-name bold-font-weight">
+              Nykaa Matte To Last! <br />
+              Liquid Lipstick
+            </div>
+            <div class="cart-product-price bold-font-weight">
+              ₹599<span class="gray-color lastprice">₹599 </span>
+            </div>
+            <div class="cart-product-off">50% off</div>
+            <div class="product-quantity flex">
+              <div class="product-quantity-label">Quantity :</div>
+              <button class="cart-product-btn">+</button>
+              <div class="cart-product-number">1</div>
+              <button class="cart-product-btn">-</button>
+            </div>
+            <button class="btn cart-remove-btn">Remove from cart</button>
+
+          </div>
+        </div>
+      </div>
+      <div class="price-details-card">
+        <div class="price-details-title bold-font-weight">PRICE DETAILS</div>
+        <hr />
+        <div class="price-details-first-section">
+          <div class="flex-row">
+            <div>Price(2 items)</div>
+            <div>₹599</div>
+          </div>
+          <div class="flex-row">
+            <div>Discount</div>
+            <div>-₹99</div>
+          </div>
+          <div class="flex-row">
+            <div>Delivery charges</div>
+            <div>₹99</div>
+          </div>
+        </div>
+        <hr />
+        <div class="flex-row">
+          <div class="bold-font-weight">Total Amount</div>
+          <div class="bold-font-weight">₹599</div>
+        </div>
+        <hr />
+        <div>You will be save ₹59 in this order.</div>
+        <button class="btn place-order">Place order</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-items">
+      <div class="made-by">
+        Made with <i class="fas fa-heart footer-icon"></i> By Agna vinod
+      </div>
+      <div>
+        <a href=""><i class="fab fa-github footer-social-icon"></i></a>
+        <a href=""><i class="fab fa-twitter footer-social-icon"></i></a>
+        <a href=""><i class="fab fa-linkedin footer-social-icon"></i></a>
+      </div>
+      <div class="copy-right">© 2024 Sariga</div>
+    </div>
+  </footer>
+
+  <script>
+      src="/pages/home/mobile-menu.js">
+  document.addEventListener('DOMContentLoaded', () => {
+    const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            console.log('Add to cart button clicked.'); // Check if the button click event is triggered
+
+            // Extract product information
+            const productCard = button.closest('.product-card');
+            if (!productCard) {
+                console.error('Product card not found.'); // Log error if product card is not found
+                return;
+            }
+            
+            const productName = productCard.querySelector('.product-card-title').innerText;
+            const productPrice = parseFloat(productCard.querySelector('.card-mrp').innerText.replace('MRP: ₹', ''));
+            const productImage = productCard.querySelector('.product-img').getAttribute('src');
+            const quantity = 1; // Assuming the quantity is always 1 when adding to cart
+
+            // Create product object
+            const product = {
+                name: productName,
+                price: productPrice,
+                image: productImage,
+                quantity: quantity
+            };
+
+            // Retrieve existing cart from localStorage or initialize an empty array
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Add product to cart
+            cart.push(product);
+
+            // Convert cart to JSON string and store it in localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Redirect to the cart page
+            window.location.href = '/pages/cart/cart.html';
+        });
+    });
+});
+
+    </script>
+</body>
+
+</html>

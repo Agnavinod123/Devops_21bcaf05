@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Agna Vinod">
+    <meta name="description" content="Products page of Stunners Hub">
+    <meta name="keywords" content="beauty store, e-commerce, react.js">
+    <link rel="stylesheet" href="https://felizui.netlify.app/styles/index.css">
+    <link rel="stylesheet" href="/pages/home/homepage.css">
+    <link rel="stylesheet" href="/pages/products/products.css">
+    <script src="https://kit.fontawesome.com/7744bfb8db.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="/assets/Stunners.png">
+    <title>Products page</title>
+</head>
+<body>
+    <div class="wrapper">
+        <nav class="navbar semibold-font-weight">
+            <div class="openMenu"><i class="fa fa-bars"></i></div>
+            <a class="nav-icon-link nav-link link-no-style hide-icon" href="/index.html">
+                <img class="logoimage" src="/assets/Stunners.png" alt="">
+                <span class="small-fontsize">Sariga</span>
+            </a>
+            <a class="nav-link link-no-style nav-home" href="/index.html">Home</a>
+            <a class="nav-link link-no-style nav-products active" href="/pages/products/products.html">Products</a>
+            <div class="mainMenu">
+                <div class="searchbar">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" class="search-input" placeholder="Search on Sariga">
+                </div>
+                <a href="/pages/Authentication/login/login.html" class="link-no-style nav-link nav-icon-link">
+                    <i class="fas fa-user hide-icon"></i>
+                    <span class="small-fontsize">Login</span>
+                </a>
+                
+                <a href="/pages/cart/cart.html" class="link-no-style nav-link nav-icon-link">
+                    <i class="fas fa-cart-shopping hide-icon"><span class="number-badge">0</span></i>
+                    <span class="small-fontsize">Cart</span>
+                </a>
+                <div class="closeMenu">
+                    <i class="fa fa-times"></i>
+                </div>
+            </div>
+        </nav>
+        <div class="product-page">
+            <div class="cards-list">
+                <div class="card product-card">
+                    <div class="card-padding">
+                        <img class="product-img" src="/assets/product1.jpg" alt="">
+                        <div class="product-card-title bold-font-weight">
+                            Nykaa Matte To Last ! Liquid Lipstick
+                        </div>
+                        <div class="card-mrp">
+                            <span class="gray-color">MRP:</span> ₹899
+                        </div>
+                        <div class="rating small-fontsize">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="product-card-footer pink-color">
+                        <button class="btn card-btn" onclick="addToCart('/assets/product1.jpg', 'Nykaa Matte To Last ! Liquid Lipstick', 899)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="card product-card">
+                    <div class="card-padding">
+                        <img class="product-img" src="/assets/product2.jpg" alt="">
+                        <div class="product-card-title bold-font-weight">
+                            Huda beauty ! Liquid Lipstick
+                        </div>
+                        <div class="card-mrp">
+                            <span class="gray-color">MRP:</span> ₹599
+                        </div>
+                        <div class="rating small-fontsize">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="product-card-footer pink-color">
+                       
+                        <button class="btn card-btn" onclick="addToCart('/assets/product2.jpg', 'Huda beauty ! Liquid Lipstick', 899)">Add to Cart</button>
+
+            </div>
+        </div>
+        <div class="card product-card">
+            <div class="card-padding">
+                <img class="product-img" src="/assets/product3.jpg" alt="">
+                <div class="product-card-title bold-font-weight">
+                    Plum Matte To Last ! Liquid Lipstick
+                </div>
+                <div class="card-mrp">
+                    <span class="gray-color">MRP:</span> ₹599
+                </div>
+                <div class="rating small-fontsize">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+            </div>
+            <div class="product-card-footer pink-color">
+               
+                <button class="btn card-btn" onclick="addToCart('/assets/product3.jpg', 'PLUM Matte To Last ! Liquid Lipstick', 899)">Add to Cart</button>
+
+    </div>
+    <script src="/pages/home/mobile-menu.js"></script>
+    
+    <script>
+        function addToCart(imageUrl, productName, price) {
+            // Retrieve the cart data from localStorage or initialize an empty array
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Add the selected product to the cart
+            cart.push({ imageUrl, productName, price });
+
+            // Update the cart data in localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Redirect the user to the cart page
+            window.location.href = "/pages/cart/cart.html";
+        }
+    </script>
+</body>
+</html>

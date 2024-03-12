@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)http://127.0.0.1:5500/pages/Authentication/login/login.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Agna vinod">
+    <meta name="description" content="Beauty E-commerce Store">
+    <meta name="keywords" content="beauty store,e-commerce,react.js">
+    <link rel="stylesheet" href="./Sariga partial_files/index.css">
+    <link rel="stylesheet" href="./Sariga partial_files/login.css">
+    <link rel="stylesheet" href="./Sariga partial_files/homepage.css">
+    <link rel="stylesheet" href="./Sariga partial_files/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="icon" href="./Sariga partial_files/Stunners.png">
+    <title>Sariga</title>
+  </head>
+
+  <body>
+    <nav class="navbar semibold-font-weight">
+      <div class="openMenu"><i class="fa fa-bars"></i></div>
+      <a class="nav-icon-link nav-link link-no-style hide-icon" href="http://127.0.0.1:5500/index.html">
+        <img class="logoimage" src="./Sariga partial_files/Stunners.png" alt="">
+        <span class="small-fontsize">Sariga</span>
+      </a>
+      <a class="nav-link link-no-style" href="http://127.0.0.1:5500/index.html">Home</a>
+      <a class="nav-link link-no-style nav-products" href="http://127.0.0.1:5500/pages/products/products.html">Products</a>
+
+      <div class="mainMenu">
+        <div class="searchbar">
+          <i class="fa-solid fa-magnifying-glass search-icon hide-icon"></i>
+          <input type="text" class="search-input" placeholder="Search on Sariga">
+        </div>
+        <a href="http://127.0.0.1:5500/pages/Authentication/login/login.html" class="link-no-style nav-link nav-icon-link active">
+          <i class="fas fa-user hide-icon"></i>
+          <span class="small-fontsize">Login</span>
+        </a>
+     
+        <a href="http://127.0.0.1:5500/pages/cart/cart.html" class="link-no-style nav-link nav-icon-link">
+          <i class="fas fa-cart-shopping hide-icon"><span class="number-badge">0</span></i>
+          <span class="small-fontsize">Cart</span>
+        </a>
+
+        <div class="closeMenu">
+          <i class="fa fa-times"></i>
+        </div>
+      </div>
+    </nav>
+
+    <div class="login-page">
+      <div class="login">
+        <h4 class="login-title">Login</h4>
+
+        <div class="login-label"><label for="">Email address</label></div>
+        <input type="text" class="login-input" placeholder="abc@gmail.com">
+        <div><label for="" class="login-label">Password</label></div>
+        <div class="login-password">
+          <input type="password" class="login-password-input" placeholder="password">
+          <button class="login-icon button-style-none">
+            <i class="fa-regular fa-eye"></i>
+          </button>
+        </div>
+        <div class="flex">
+          <div>
+            <input type="checkbox" name="remember" id=""><label for="" class="remember-label">Remember me</label>
+          </div>
+          <div class="forgot-password semibold-font-weight">
+            Forgot your password?
+          </div>
+        </div>
+        <button class="btn btn-login">Login</button>
+        <a href="http://127.0.0.1:5500/pages/Authentication/signup/signup.html" class="link-no-style signup-link">Create new account <i class="fa-solid fa-angle-right login-icon"></i>
+        </a>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-items">
+        <div class="made-by">
+          Made with <i class="fas fa-heart footer-icon"></i> By Agna Vinod
+        </div>
+        <div>
+          <a href="http://127.0.0.1:5500/pages/Authentication/login/login.html"><i class="fab fa-github footer-social-icon"></i></a>
+          <a href="http://127.0.0.1:5500/pages/Authentication/login/login.html"><i class="fab fa-twitter footer-social-icon"></i></a>
+          <a href="http://127.0.0.1:5500/pages/Authentication/login/login.html"><i class="fab fa-linkedin footer-social-icon"></i></a>
+        </div>
+        <div class="copy-right">© 2024 Sariga</div>
+      </div>
+      </footer>
+    
+    <script src="./Sariga partial_files/mobile-menu.js.download"></script>
+  <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>
